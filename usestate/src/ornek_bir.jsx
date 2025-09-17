@@ -1,10 +1,16 @@
-function Getir({ adi, soyad }) {
-  return (
-    <div >
-      {adi}
-        {soyad}
-    </div>
-  );
-}
+function Elemanlar({isim,soyisim}){
 
-export default Getir;
+return(
+
+<div>
+{isim}
+ {soyisim}
+
+</div>
+
+)
+
+
+
+}
+export default Elemanlar;
