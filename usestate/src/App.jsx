@@ -1,46 +1,20 @@
-import { use, useState } from "react";
-import Elemanlar from "./ornek_bir";
-import "./App.css";
-import Addegistir  from "./Ornek_iki";
+import React from "react";
+import Header  from "./Header";
+
+import "./App.css"
+import { courses } from "./Data";
+import Course from "./Course";
 
 function App() {
- // const [FisrtName, setFisrtName] = useState("Metin");
- // const [LastName, setLastName] = useState("Köseci");
-
-const [FisrtName,setFisrtName]=useState("Metin");
-const[LastName,setLastName]=useState("Köseci");
-const[addegis,setAddegis]=useState("Haşeria");
-
-const [userInfo,setusertInfo]=useState({username:"metin", password:"1234"});
-const [show, setShow]=useState(true);
-
-const ismidegistir=()=>{
-  setFisrtName("Ahmet")
-}
-
   return (
-    <div style={{display:"flex", gap:"10px"}}>
-<Elemanlar isim={FisrtName} />
-<Elemanlar soyisim={LastName} />
+    <div >
+      <Header />
 
-<div style={{display:"flex, flexDricetion:column"}}>
-  <Addegistir ad={addegis}/>
-</div>
-<div> 
-
-<button onClick={ismidegistir}>AD DEĞİŞTİR 
-</button>
-  <button onClick={()=>{setAddegis("ÖLDÜ")}} >İsim Değiştir</button></div> 
-
-
-{show ? <div>{userInfo.username} {userInfo.password}   </div>: <div>Bilgileri gösterme</div>}
-
-
-
-
-
-
-  
+      <div className="Kurslar">
+        {courses.map((course) => (
+          <Course key={course.id} course={course} />
+        ))}
+      </div>
     </div>
   );
 }
