@@ -1,23 +1,22 @@
-
 import React from "react";
 import Header  from "./Header";
+
 import "./App.css"
 import { courses } from "./Data";
-
 import Course from "./Course";
-function App() {
-  const [adlar] = useState([
-    { id: 1, name: "Ali" },
-    { id: 2, name: "Veli" },
-    { id: 3, name: "Ayşe" },
-  ]);
 
+function App() {
   return (
-    <ul>
-      {adlar.map((isim) => (
-        <li key={isim.id}>{isim.name}</li>
-      ))}
-    </ul>
+    <div >
+      <Header />
+
+      <div className="Kurslar">
+        {courses.map((course) => (
+          <Course key={course.id} course={course} />
+        ))}
+      </div>
+    </div>
   );
 }
+
 export default App;
